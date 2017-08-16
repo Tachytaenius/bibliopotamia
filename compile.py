@@ -36,7 +36,7 @@ while(True):
 		data = data + chapter.read().rstrip("\n") + "\n\n---\n\n" # This program hasn't been written in a "look before you leap" approach, so the inevitable "\n\n---\n\n" at the end of the data variable (provided that chapters.txt gave us any chapters (because of how this program was written)) is removed rather than never being added.
 	del targets[0]
 
-data = markdown2.markdown(data, extras=["header-ids, footnotes"])
+data = markdown2.markdown(data, extras=["header-ids", "footnotes"])
 
 while(True):
   out = input("Where'd you like your output HTML file, relative to \"" + os.getcwd() + "\"? Enter: ")
